@@ -1,0 +1,45 @@
+@import (reference) "_gridVar.less";
+// ============================
+// Настройки страницы, типографика
+// ============================
+
+*,::after,::before{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;   
+}
+body{
+   background: @color-main;
+   color: @color-text-main;
+   font-family: @font-main, @font-second;
+   -webkit-font-smoothing: subpixel-antialiased !important;
+   -webkit-backface-visibility: hidden;
+   -moz-backface-visibility:    hidden;
+   -ms-backface-visibility:     hidden;
+   font-size: 16px; 
+   font-weight: 400;
+   line-height: 1.5;
+   text-align: left;         
+}
+h1,.h1{font-size: 2.5rem};
+h1,.h2{font-size: 2rem};
+h1,.h3{font-size: 1.75rem};
+h1,.h4{font-size: 1.5rem};
+h1,.h5{font-size: 1.25rem};
+h1,.h6{font-size: 1rem};
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{margin-bottom: .5rem;margin-top: .5rem;font-family: inherit;line-height: 1.2;color: inherit;font-weight: bold;}
+p{margin-top: .5rem;margin-bottom: .5rem;}
+.lead{font-size: inherit;font-weight: 300;}
+.mark, mark{padding: .1em;background-color: #FAFAC8;}
+abbr{cursor: help;font-size: .9rem;}
+img{vertical-align: middle;}
+
+// ============================
+// Таблица
+// ============================
+
+table{border-collapse: collapse;}
+table td, th{padding: .5rem;}
+table th{color: #343434;background-color: #E6EBF0;border-color: #DCEBF0;}
+td, th{border-top: 0;border-left: 0;border-right: 0;border-bottom: 1px solid #dee2e6;}
