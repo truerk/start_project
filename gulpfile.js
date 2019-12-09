@@ -49,18 +49,20 @@ gulp.task('pug', function(){
 
 gulp.task('scripts', function(){
     return gulp.src([
-        'app/libs/jquery.min.js',
-        'app/libs/swiper.min.js',
+        /*'app/libs/jquery.min.js',
+        'app/libs/swiper.min.js',*/
+        'app/js/common.js'
     ])
-    .pipe(concat('libs.min.js'))
+    //.pipe(concat('libs.min.js'))
     .pipe(uglify(
-    //{toplevel: true}
+        //{toplevel: true}
     ))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('app/js'));
 });
 
 gulp.task('css-libs', function(){
-    return gulp.src([/*'app/css/libs.css', 'node_modules/normalize.css/normalize.css'*/])
+    return gulp.src([/*'app/css/libs.css',*/ 'node_modules/normalize.css/normalize.css'])
     .pipe(concat('libs.css'))
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))
@@ -105,7 +107,7 @@ gulp.task('watchLesson', ['browser-sync', 'lesson'], function(){
    gulp.watch('app/js/*.js', browserSync.reload);
 });
 
-gulp.task('watch', ['browser-sync', 'less', 'pug', 'css-libs', 'scripts'], function(){
+gulp.task('watch', ['browser-sync', 'less', 'pug', 'css-libs', /*'scripts'*/], function(){
     gulp.watch('app/less/*.less', ['less']);
     gulp.watch('app/*.pug', ['pug']);
     gulp.watch('app/*.html', browserSync.reload);
@@ -116,7 +118,7 @@ function delFile(){
     //del(['app/css/*']);
 }
 
-gulp.task('build', ['clean', 'less', 'scripts'], function(){
+gulp.task('build', ['clean', 'less', /*'scripts'*/], function(){
     var buildCss = gulp.src([
         'app/css/style.css',
         'app/css/swiper.min.css',
