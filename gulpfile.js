@@ -1,5 +1,3 @@
-//https://mrmlnc.gitbooks.io/less-guidebook-for-beginners/
-//content/chapter_3/special-parameters-and-pattern-matching.html
 var gulp = require('gulp');
 var less = require('gulp-less');
 var cleanCSS = require('gulp-clean-css');//минификация css
@@ -24,10 +22,10 @@ gulp.task('less', function(){
         /*.pipe(cleanCSS({
             level: 2
         }))*/
-        /*.pipe(autoprefixer({
+        .pipe(autoprefixer({
             browsers: ['last 7 versions', '> 0.1%', 'ie 8', 'ie 7'],
             cascade: false
-        }))*/
+        }))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}));
 });
