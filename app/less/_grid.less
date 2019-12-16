@@ -5,11 +5,11 @@
 // ============================
 
 .container(@container-width: @container-width; @offset: @offset / 2;){    
-    margin: 0 auto;max-width: @container-width;padding: 0 @offset;box-sizing: border-box;
-    @media (min-width: @breakpoint-lg) {max-width: @container-width-lg;}
-    @media (min-width: @breakpoint-md) {max-width: @container-width-md;}
-    @media (min-width: @breakpoint-sm) {max-width: @container-width-sm;}
-    @media (max-width: @breakpoint-xs) {max-width: @container-width-xs;}
+    margin: 0 auto;max-width: @container-width;width: 100%;padding: 0 @offset;box-sizing: border-box;
+    @media (min-width: @breakpoint-lg) {max-width: @container-width-lg;width: 100%;}
+    @media (min-width: @breakpoint-md) {max-width: @container-width-md;width: 100%;}
+    @media (min-width: @breakpoint-sm) {max-width: @container-width-sm;width: 100%;}
+    @media (max-width: @breakpoint-xs) {max-width: @container-width-xs;width: 100%;}
 }
 .container-fluid(@container-width: @container-fluid-width; @offset: @offset / 2;){margin: 0 auto;max-width: @container-width;padding: 0;box-sizing: border-box;}
 
